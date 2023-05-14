@@ -1,0 +1,678 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "OMEGA 3",
+      "name_description": "Жирные кислоты",
+      "sku": 1,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/cea/q2d6b3rm82opvy989ykl5k0y1q2xgrwm/SHRINK-copy-35.png",
+      "images": [
+      ],
+      "price": 899,
+      "short_description": "Жирные кислоты снижают воспалительные процессы в организме и необходимы для здорового сердца, мозга и зрения.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Омега-3 — это группа полиненасыщенных жирных кислот (ПНЖК), которые являются важными питательными веществами для человека."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 1 капсуле 1 раз в день во время еды."
+        },
+        {
+          "id": "compound",
+          "content": "Высококонцентрированный рыбий жир, антиокислитель смесь токоферолов (Е306), желатин, агент влагоудерживающий глицерин (Е422), подсластитель сорбит (Е420i), вода, консервант сорбат калия (Е202)."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/487/ge6e5ws15xwqk9odekdufsmln80f9jep/IMG_4665.jpeg",
+            "https://ipsumvitamin.ru/upload/iblock/7b4/xgk10j138envd9xebjon9z1lz5gi1gop/IMG_4664.jpeg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 406,
+          "mod_name": "60 шт.",
+          "mod_price": 899
+        },
+        {
+          "mod_sku": 407,
+          "mod_name": "demo.",
+          "mod_price": 1
+        }
+      ],
+      "tags": [
+        "heart",
+        "eye",
+        "brain"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "GABA",
+      "name_description": "Важный нейромедиатор",
+      "sku": 2,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/8ff/0fhpvlyx1ttuo1pr6v4389cy4rqvqbxr/SHRINK-copy-63.png",
+      "images": [
+      ],
+      "price": 1200,
+      "short_description": "Важный нейромедиатор, отвечающий за регуляцию нервной системы и мышечного тонуса, противостоянию стрессу, нормализацию настроения и сна.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Гамма-аминомасляная кислота (GABA) является важным нейромедиатором в центральной нервной системе человека."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 3 капсулы перед сном, запивая достаточным количеством воды."
+        },
+        {
+          "id": "compound",
+          "content": "Гамма-аминомасляная кислота, желатиновая капсула (желатин), магниевые соли стеариновой кислоты, диоксид кремния (антислеживающий агент)."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/d62/rruewggpyk0mzwagffe83qnhtfym5x6l/IMG_4666.jpeg",
+            "https://ipsumvitamin.ru/upload/iblock/4af/0aybwhp6hiet4arvsc4hawpol2firb3c/IMG_4667.jpeg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 404,
+          "mod_name": "60 шт.",
+          "mod_price": 1200
+        }
+      ],
+      "tags": [
+        "muscule",
+        "sleep",
+        "stress"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "VITAMIN C",
+      "name_description": "Мощнейший антиоксидант",
+      "sku": 3,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/6f4/o9gccfzw3nodmqp2j60qvwk7sinezdiu/SHRINK%20copy%2031.png",
+      "images": [
+      ],
+      "price": 985,
+      "short_description": "Мощнейший антиоксидант для поддержания иммунитета, укрепления костей и стенок сосудов, защиты от влияния стресса.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Витамин С играет важную роль в построение клеток и тканей, и функционировании иммунитета."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 1 капсуле 1 раз непосредственно после еды."
+        },
+        {
+          "id": "compound",
+          "content": "Аскорбат натрия (витамин С), желатиновая капсула (желатин), мальтодекстрин."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/4e8/e547xsl2ts4f2ve02bfbcu5bt4cmaet7/%D0%A1%D0%93%D0%A0%20%D0%90%D1%81%D0%BA%D0%BE%D1%80%D0%B1%D0%B0%D1%82%20%D0%BD%D0%B0%D1%82%D1%80%D0%B8%D1%8F%20900%20%D0%BC%D0%B3_page-0001.jpg",
+            "https://ipsumvitamin.ru/upload/iblock/85c/z9l368qspt9f8zk3f36kpu6ugbiupwkr/%D0%9F%D1%80%D0%B8%D0%BB.%20%D0%90%D1%81%D0%BA%D0%BE%D1%80%D0%B1%D0%B0%D1%82%20%D0%BD%D0%B0%D1%82%D1%80%D0%B8%D1%8F%20900%20%D0%BC%D0%B3_page-0001.jpg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 60,
+          "mod_name": "60 шт.",
+          "mod_price": 985
+        }
+      ],
+      "tags": [
+        "bones",
+        "immuno",
+        "stress",
+        "antioxidant"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "5-HTP",
+      "name_description": "Природный антидепрессант",
+      "sku": 4,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/569/8uqg49ilzwga6x8kbj0sqsylake4q8km/SHRINK%20copy%2028.png",
+      "images": [
+      ],
+      "price": 1999,
+      "short_description": "Природный антидепрессант поддерживает эмоциональный баланс, улучшает сон, снимает головную боль, регулирует аппетит.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Эта биодобавка помогает организму бороться с депрессией и с продолжительными последствиями стресса: снижает тревожность, раздражительность, агрессивность, апатичное состояние, панические приступы, невроз, помогает успокоиться и расслабиться. Ее используют для адаптации при смене часовых поясов."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 1 капсуле 1 раз в день в любое время дня, запить достаточным количеством воды."
+        },
+        {
+          "id": "compound",
+          "content": "Мальтодекстрин, желатиновая капсула (желатин), экстракт гриффонии (5-гидрокситриптофан), пиридоксина гидрохлорид."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/7eb/mh278guat7f3ygve566cigk3kegb67o4/%D0%A1%D0%93%D0%A0%205-htp%20100%20mg%20(1)_page-0001.jpg",
+            "https://ipsumvitamin.ru/upload/iblock/06f/452qgr4xbeb3tm1rrazgnrzielrb9old/%D0%9F%D1%80%D0%B8%D0%BB.%205-htp%20100%20mg%20(1)_page-0001.jpg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 75,
+          "mod_name": "60 шт.",
+          "mod_price": 1999
+        }
+      ],
+      "tags": [
+        "weight",
+        "sleep",
+        "headhurt",
+        "stress"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "MAGNESIUM",
+      "name_description": "Помощник в защите от стресса",
+      "sku": 5,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/62c/ztbkxoymzta9uum865tnapqy2d09cdj6/SHRINK%20copy%2032.png",
+      "images": [
+      ],
+      "price": 996,
+      "short_description": "Магний + В6 - важный помощник в защите от стресса, улучшении сна и обмена веществ, поддержке сердечной деятельности и выработке серотонина.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Магний противостоит воздействию на организм неблагоприятных условий внешней среды. Он помогает устранить раздражительность и тревожность, вызванные стрессовыми факторами, улучшает концентрацию внимания."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 2 капсулы 2 раза в день во время еды."
+        },
+        {
+          "id": "compound",
+          "content": "Магния бисглицинат, желатиновая капсула (желатин), диоксид кремния, пиридоксина гидрохлорид."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/3ed/t4d65scz63sdi8gtikvc1pqzt87meyn4/%D0%A1%D0%93%D0%A0%20Magnesium%20bisglycinate_page-0001.jpg",
+            "https://ipsumvitamin.ru/upload/iblock/b2d/re3rxa23l99jg4v5wbzy6hwpbug460yc/%D0%9F%D1%80%D0%B8%D0%BB.%20Magnesium%20bisglycinate_page-0001.jpg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 81,
+          "mod_name": "60 шт.",
+          "mod_price": 996
+        }
+      ],
+      "tags": [
+        "heart",
+        "sleep",
+        "metabolism",
+        "stress"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "IRON",
+      "name_description": "Укрепление иммунитета",
+      "sku": 6,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/b4f/e6zcwwu4eu7ii446kqky0mcfaqpqklyk/SHRINK%20copy%2030.png",
+      "images": [
+      ],
+      "price": 978,
+      "short_description": "Железо + В9 + В12 - незаменимый элемент для профилактики анемии, укрепления иммунитета, поддержки нервной системы и правильного обмена веществ.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Железо – важно для здорового функционирования организма. Оно влияет на концентрацию внимания, работу ЖКТ, иммунную систему и регуляцию температуры тела. Недостаток железа сказывается на общем самочувствии."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 1 капсуле один раз в день во время еды. Запивать достаточным количеством воды."
+        },
+        {
+          "id": "compound",
+          "content": "Мальтодекстрин, железа бисглицинат, желатиновая капсула (желатин), кремния диоксид, фолиевая кислота, метилкобаламин."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/e79/xsbyfok1h1cjuja5bg9rdsjro0eic57q/%D0%A1%D0%93%D0%A0.%20Iron%20bisglycinate%2040%20mg%20(1)_page-0001.jpg",
+            "https://ipsumvitamin.ru/upload/iblock/3f0/hpjte8ghszu1lkgi39iun1odbvtanj05/%D0%9F%D1%80%D0%B8%D0%BB.%20Iron%20bisglycinate%2040%20mg_page-0001.jpg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 82,
+          "mod_name": "60 шт.",
+          "mod_price": 978
+        }
+      ],
+      "tags": [
+        "immuno",
+        "bones",
+        "metabolism",
+        "blood"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Zn + Mg + B6",
+      "name_description": "Для высокого уровня тестостерона",
+      "sku": 7,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/1f8/5bdok1oraqs1scigikl93aqgm6xtlwhw/SHRINK%20copy%2027.png",
+      "images": [
+      ],
+      "price": 937,
+      "short_description": "Витаминный комплекс для наращивания мышц, здоровья сердца, крепкого сна и высокого уровня тестостерона.",
+      "description": [
+        {
+          "id": "description",
+          "content": "Комплекс ZMA прекрасно подходит как для спортсменов, так и для людей, следящих за состоянием своего здоровья и стремящимся компенсировать дефициты полезных микроэлементов."
+        },
+        {
+          "id": "recommendation",
+          "content": "Принимать взрослым по 1 капсуле 1 раз в день в любое время дня, запить достаточным количеством воды."
+        },
+        {
+          "id": "compound",
+          "content": "Цитрат магния, Желатиновая капсула (желатин), Цинка цитрат, Магниевые соли стеариновой кислоты, Кремния диоксид, Пиридоксина гидрохлорид."
+        },
+        {
+          "id": "certificate",
+          "content": [
+            "https://ipsumvitamin.ru/upload/iblock/d87/fpicapsdfz19gfiut3gly9r4d2086say/%D0%A1%D0%93%D0%A0%20ZMA%20Zn%20%20%20Mg%20%20%20B6_page-0001.jpg",
+            "https://ipsumvitamin.ru/upload/iblock/124/j7lgpzbsz4exq37bbfxo5w9e3nek2t5r/%D0%9F%D1%80%D0%B8%D0%BB.%20ZMA%20Zn%20%20%20Mg%20%20%20B6_page-0001.jpg"
+          ]
+        }
+      ],
+      "mod": [
+        {
+          "mod_sku": 83,
+          "mod_name": "60 шт.",
+          "mod_price": 937
+        }
+      ],
+      "tags": [
+        "sleep",
+        "heart",
+        "testosteron",
+        "muscule"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "MULTI - VITAMIN",
+      "name_description": "Комплекс витаминов",
+      "sku": 8,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/a43/kr5aeeb79unlzp9iw047sq3opb62i01e/SHRINK%20copy%2026.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Комплекс витаминов для восполнения дефицита всех необходимых организму элементов.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "heart",
+        "brain",
+        "bones"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "TESTO - BOOSTER",
+      "name_description": "Адаптация к стрессу",
+      "sku": 9,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/fc8/ab76al7xusvh7j2lv2v95wrkdk10du2d/IMG_7980.PNG",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Комплексная пищевая добавка, помогающая организму легче адаптироваться к стрессу, поддерживать высокий уровень тестостерона и общей энергии, а также мужскую сексуальную функцию и иммунитет.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "testosteron",
+        "stress",
+        "immuno"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "CURCUMIN BOSWELLIA",
+      "name_description": "Улучшение состояния суставов",
+      "sku": 10,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/7e8/ryczwmhn4sxftga4saxdii3rxf18u3ml/SHRINK-copy-36.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Сочетание Босвелии и Куркумина - ударное противовоспалительное средство для улучшения состояния суставов, уменьшает суставную боль и опухлость вокруг суставов, улучшает их подвижность.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "bones",
+        "immuno",
+        "blood",
+        "liver"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "ALPHA LIPOLIC",
+      "name_description": "Улучшение метаболизма",
+      "sku": 11,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/be0/mvq1tisp9adz4qkh33kp6af3nrqmt95t/SHRINK-copy-37.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Липоевая кислота играет важную роль в преобразовании углеводов в энергию, улучшает метаболизм, защищает от атеросклероза, диабета.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "metabolism",
+        "blood",
+        "skin"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "COENZYME Q10",
+      "name_description": "Сильный антиоксидант",
+      "sku": 12,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/671/geipppzfq2932x0ifmkcycbz4jizz0bd/SHRINK-copy-38.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Коэнзим Q10 сильный антиоксидант, помогает предотвратить сердечно-сосудистые заболевания, нарушения обмена веществ, укрепляет кровеносные сосуды, замедляет процессы старения и продлевает молодость кожи.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "metabolism",
+        "blood",
+        "skin"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Q10 + ALPHA LIPOLIC",
+      "name_description": "Сильный антиоксидант",
+      "sku": 13,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/716/i4ooj3gp0b6ujw3084a91r1hu33cuat4/SHRINK%20copy%2036.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Синергия двух мощных антиоксидантов помогает защитить иммунитет, укрепить стенки сосудов и улучшить циркуляцию крови.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "heart",
+        "skin"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "D3 2000",
+      "name_description": "«Витамин солнца»",
+      "sku": 14,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/624/u2fqd6h9hhk8h999rf6de8av25bwike2/SHRINK%20copy%2063.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "«Витамин солнца»: регулирует метаболизм, позволяет противостоять стрессу, нормализует нервную систему, повышает иммунитет.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "bones",
+        "heart",
+        "brain"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "CURCUMIN",
+      "name_description": "Природный антибиотик",
+      "sku": 15,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/c97/7e8gq6qm0th65s04l5ui9uyrisu2k3h9/SHRINK%20copy%2033.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Природный антибиотик и антиоксидант обладает уникальными свойствами. Поддерживает иммунитет, защищает печень, замедляет процессы старения.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "stomach",
+        "heart",
+        "immuno",
+        "bones"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "ADEK",
+      "name_description": "Мицеллярные витамины",
+      "sku": 16,
+      "category_id": 1,
+      "primary_image": "https://ipsumvitamin.ru/upload/iblock/19b/4coavn4mxxpr3mc79caax4qbvyfpgvq6/SHRINK%20copy%2034.png",
+      "images": [
+      ],
+      "price": 0,
+      "short_description": "Мицеллярные витамины ADEK – оптимальный способ дополнить ваш рацион необходимыми микронутриентами.",
+      "description": [
+        {
+          "id": "description",
+          "content": ""
+        },
+        {
+          "id": "recommendation",
+          "content": ""
+        },
+        {
+          "id": "compound",
+          "content": ""
+        },
+        {
+          "id": "certificate",
+          "content": [
+          ]
+        }
+      ],
+      "mod": [
+      ],
+      "tags": [
+        "immuno",
+        "heart",
+        "eye",
+        "bones"
+      ]
+    }
+  ]
+}

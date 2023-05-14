@@ -1,0 +1,84 @@
+{
+  "tags": [
+    {
+      "id": "heart",
+      "image": "https://ipsumvitamin.ru/upload/iblock/fa2/gy25dqz0bcd63q1l5zrww8mglsgeo6z7/heart.svg",
+      "name": "Сердце"
+    },
+    {
+      "id": "brain",
+      "image": "https://ipsumvitamin.ru/upload/iblock/78c/oitetktq9sufnfbei089o521wp04sj6z/brain.svg",
+      "name": "Мозг"
+    },
+    {
+      "id": "eye",
+      "image": "https://ipsumvitamin.ru/upload/iblock/137/et13g8bmdznt1rdsifenklrwert74wr1/eye.svg",
+      "name": "Зрение"
+    },
+    {
+      "id": "stress",
+      "image": "https://ipsumvitamin.ru/upload/iblock/e63/l1p9g1v0uhtzmlcbfkqintvwj0yfrfv0/stress.svg",
+      "name": "Стресс"
+    },
+    {
+      "id": "muscule",
+      "image": "https://ipsumvitamin.ru/upload/iblock/fb6/42yvqfqnj7gu420l3zm1bmt797syj3c5/muscule.svg",
+      "name": "Мышцы"
+    },
+    {
+      "id": "sleep",
+      "image": "https://ipsumvitamin.ru/upload/iblock/115/lb15fjkouiqt4vni1n5y3rt3zxpsaf69/sleep.svg",
+      "name": "Сон"
+    },
+    {
+      "id": "immuno",
+      "image": "https://ipsumvitamin.ru/upload/iblock/5cc/0kz4j2jyig75ch157s3jntjzjmy2a5cj/immuno.svg",
+      "name": "Иммунитет"
+    },
+    {
+      "id": "bones",
+      "image": "https://ipsumvitamin.ru/upload/iblock/266/ztwt5f0gm2xyzdy6m7adwhq1rfdydg3i/bones.svg",
+      "name": "Кости"
+    },
+    {
+      "id": "antioxidant",
+      "image": "https://ipsumvitamin.ru/upload/iblock/1a8/dm2bh9coawk5xpvpykw1m6a7ix5uv3g6/antioxidant.svg",
+      "name": "Антиоксидант"
+    },
+    {
+      "id": "weight",
+      "image": "https://ipsumvitamin.ru/upload/iblock/9a8/whsz96qfq3qtapmw6shgujjb4066t48j/weight.svg",
+      "name": "Вес"
+    },
+    {
+      "id": "headhurt",
+      "image": "https://ipsumvitamin.ru/upload/iblock/4d8/vpwf45a0eyccf1ovqbgsw5c9kwdyzmjl/headhurt@3x.svg",
+      "name": "Головная боль"
+    },
+    {
+      "id": "metabolism",
+      "image": "https://ipsumvitamin.ru/upload/iblock/93e/8c1x3dl7dzduljrgdnd6e0vseb4pwvod/metabolism.svg",
+      "name": "Метаболизм"
+    },
+    {
+      "id": "blood",
+      "image": "https://ipsumvitamin.ru/upload/iblock/78f/3pr0jhdec2i61hcpv2vxep27r0sw3043/blood2.svg",
+      "name": "Кровь"
+    },
+    {
+      "id": "testosteron",
+      "image": "https://ipsumvitamin.ru/upload/iblock/c87/e1pgwcewf4h9irhok5mbyzaha1w7q3ov/testosteron.svg",
+      "name": "Тестостерон"
+    },
+    {
+      "id": "liver",
+      "image": "https://ipsumvitamin.ru/upload/iblock/82d/z62v6ds2p0j6nskae9izb1wvo0svrand/liver.svg",
+      "name": "Печень"
+    },
+    {
+      "id": "skin",
+      "image": "https://ipsumvitamin.ru/upload/iblock/993/5i90c1uddvjvevd0k3hxxz8u0m0os12x/skin.svg",
+      "name": "Лицо"
+    }
+  ]
+}
