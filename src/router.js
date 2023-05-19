@@ -18,6 +18,11 @@ export default createRouter({
             path: '/basket',
             component: () => import('./views/Basket.vue'),
             name: 'Basket'
+        },
+        {
+            path: '/success/:id?',
+            component: () => import('./views/Success.vue'),
+            name: 'Success'
         }
     ]
 })

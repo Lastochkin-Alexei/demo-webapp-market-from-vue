@@ -1,12 +1,20 @@
 <script setup>
 
 import { computed, ref, reactive } from 'vue'
+import axios from 'axios'
 import { useRouter } from 'vue-router'
 import { useBasketStore } from '@/stores/Basket'
 import Order from '@/components/Order.vue'
-import { BackButton, MainButton, useWebAppPopup, useWebApp } from "vue-tg"
+import { BackButton, MainButton, useWebAppPopup, useWebApp, useWebAppNavigation, useWebAppMainButton } from "vue-tg"
 
-const { close } = useWebApp()
+const pay_token = '381764678:TEST:57261'
+const api_token = '6263470438:AAHCS7O9lSohVGfaQshvF5uHAZv3T5kSYHw'
+const domain = 'tg.flybx.ru'
+
+const { openInvoice } = useWebAppNavigation()
+const { showMainButtonProgress, hideMainButtonProgress }  = useWebAppMainButton()
+
+const { close, initDataUnsafe } = useWebApp()
 
 const basketStore = useBasketStore()
 const { showAlert } = useWebAppPopup()
@@ -14,12 +22,14 @@ const { showAlert } = useWebAppPopup()
 const router = useRouter()
 const modalVisible = ref(false)
 
+const paymentLink = ref(null)
+
 const goBack = () => window.history.length > 1 ? router.go(-1) : router.push({name: 'Index'})
 
 const delivery_detailed = reactive({
     name: '',
     sity: '',
-    delivery: {id: 2, title: 'Пункт выдачи', price: 0, deadlines: 'в течении 3 дней'},
+    delivery: {id: 2, title: 'Пункт выдачи', price: 0, deadlines: 'от 2 дней'},
     number: '',
     street: '',
     home: ''
@@ -42,15 +52,73 @@ const pay = () => {
     } else if (!basketStore.onDelivery) {
         showAlert('Укажите способ доставки!')
     } else {
-        basketStore.addBuy({
-            uid: Math.random().toString(16).slice(2)
-        })
-
-        showAlert('Ваш заказ # ' + (basketStore.mySuccessBuy.length) + ' упешно принят!\n\nОн будет доставлен выбранной службой доставки по указанному адресу.\n\nХорошего дня и до новых встреч!\n\nВаш, IPSUM!', () => {
-            basketStore.deleteAllOrders()
-            close()
-        })
+        showMainButtonProgress()
+        createInvoiceLink()
     }
+}
+
+const getInvoice = (id, goods, orderId) => {
+    const invoice = {
+        provider_token: pay_token,
+        start_parametr: 'get_access',
+        title: `Заказ #${orderId}`,
+        photo_url: 'https://telegra.ph/file/24284792cb96ad0da2a10.png',
+        photo_width: 500,
+        photo_height: 500,
+        description: 'IPSUM - новая линейка пищевых добавок от доктора Александра Дзидзария',
+        currency: 'RUB',
+        prices: goods.map((item) => ({
+            label: `${item.name} х${item.count}`,
+            amount: (item.price * item.count * 100).toFixed(0)
+        })),
+        payload: orderId
+    }
+
+    return invoice
+}
+
+const pre = ref(null)
+
+const closeInvoice = (status) => {
+    const my_order = basketStore.mySuccessBuy.find(order => order.uid_pay == pre.value)
+
+    if (status == 'paid') {
+        basketStore.setPaid(my_order.uid_pay)
+        send_check_to_chat(my_order.uid_pay, my_order.orders, my_order.delivery, my_order.link, 'paid')
+        basketStore.deleteAllOrders()
+        showAlert(`Ваш заказ #${pre.value} успешно принят! \n\nОн будет доставлен выбранной службой доставки по указанному адресу.\n\nХорошего дня, и до новых встреч. Ваш, IPSUM!`, close)
+    } else {
+        send_check_to_chat(my_order.uid_pay, my_order.orders, my_order.delivery, my_order.link, 'fail')
+    }
+}
+
+const createInvoiceLink = () => {
+    const TOKEN = api_token
+    const uid_order = Math.random().toString().slice(2).substr(0, 5)
+
+    axios
+        .post(
+            `https://api.telegram.org/bot${TOKEN}/createInvoiceLink`,
+            getInvoice(1, basketStore.orders, uid_order)
+        )
+        .then((response) => {
+            paymentLink.value = response.data.result
+
+            basketStore.addBuy({
+                uid_pay: uid_order,
+                orders: basketStore.orders,
+                delivery: basketStore.onDelivery.delivery,
+                paid: false,
+                link: response.data.result
+            })
+
+            hideMainButtonProgress()
+            pre.value = uid_order
+            openInvoice(response.data.result, closeInvoice)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 }
 
 const finally_price = computed(() => {
@@ -61,28 +129,106 @@ const finally_price = computed(() => {
         price = price + ( i.mod.find(sku => sku.mod_sku == i.select_mod).mod_price * i.count )
     })
 
-    let total = price + delivery_detailed.delivery.price
+    let total = price
+
+    if (basketStore.onDelivery != false) {
+        total = price + basketStore.onDelivery.delivery.price
+    }
 
     return { price, total }
 })
 
 const order_delivery = ref([
-    {id: 1, title: 'Курьер', price: 200, deadlines: 'в течении 3 дней'},
-    {id: 2, title: 'Пункт выдачи', price: 0, deadlines: 'в течении 3 дней'},
-    {id: 3, title: 'Почта', price: 100, deadlines: 'в течении 7 дней'},
+    {id: 1, title: 'Курьер', price: 399, deadlines: 'от 2 дней'},
+    {id: 2, title: 'Пункт выдачи', price: 0, deadlines: 'от 2 дней'},
+    {id: 3, title: 'Почта', price: 199, deadlines: 'от 2 до 4 дней'},
 ])
 
 const selected_delivery = ref(false)
+
+const send_check_to_chat = ( orderId, goods, delivery, pay_link, status ) => {
+    const TOKEN = api_token
+
+    let reply = null
+
+    let order_list = ''
+    let blkstr = []
+
+    goods.forEach((e) => {
+        blkstr.push(e.name + ' - ' + e.count + ' шт.')
+    })
+
+    order_list = blkstr.join("\n")
+
+    let delivery_info = ''
+    if ( delivery.title === 'Почта' ) {
+        delivery_info = 'Мы привезем его в течении 2-4 дней службой доставки *Почта России* по указанному адресу.'
+    } else if ( delivery.title === 'Курьер' ) {
+        delivery_info = 'Ваш заказ будет доставлен курьером в течении 2 дней по указанному адресу.'
+    } else {
+        delivery_info = 'Вы можете самостоятельно забрать свой товар через 2 дня со склада IPSUM в вашем городе.'
+    }
+
+    let markup = null
+
+    if (status == 'paid') {
+        reply = `Ваш заказ #${orderId} успешно оплачен!\n\n*Состав заказа\n${order_list}*\n\n${delivery_info}\n\nСпасибо за ваш заказ!\nВаш IPSUM!`
+        markup = {
+                    inline_keyboard: [
+                        [
+                            {
+                                text: `Просмотреть заказ #${orderId}`,
+                                web_app: {url: `https://${domain}/success/${orderId}`}
+                            }
+                        ],
+                        [
+                            {
+                                text: `Повторить заказ`,
+                                url: pay_link
+                            }
+                        ]
+                    ]
+                }
+    } else {
+        reply = `Ваш заказ #${orderId} НЕ ОПЛАЧЕН!\n\n*Состав заказа\n${order_list}*\n\nДля перехода на оплату заказа нажмите кнопку "оплатить" под этим сообщением.\n\nВаш IPSUM!`
+        markup = {
+                    inline_keyboard: [
+                        [
+                            {
+                                text: `Оплатить заказ #${orderId}`,
+                                url: pay_link
+                            }
+                        ]
+                    ]
+                }
+    }
+
+    axios
+        .post(
+            `https://api.telegram.org/bot${TOKEN}/sendMessage`,
+            {
+                chat_id: initDataUnsafe.user.id,
+                text: reply,
+                parse_mode: 'Markdown',
+                reply_markup: markup
+            }
+        )
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+}
 
 </script>
 
 <template>
 
      <main id="container" class="p-5 max-sm:w-full w-[640px] mx-auto">
-
         <BackButton @click="goBack()"/>
 
-        <MainButton 
+        <MainButton
             text="Перейти к оплате"
             @click="() => pay()"
         />
@@ -111,13 +257,13 @@ const selected_delivery = ref(false)
             </div>
 
             <div v-else class="flex flex-col bg-theme_silver_100 px-5 py-3 rounded-xl gap-y-1 relative">
-                <span><b>Способ доставки:</b> {{ basketStore.onDelivery.delivery.title }}</span>
-                <span><b>Срок доставки заказа:</b> {{ basketStore.onDelivery.delivery.deadlines }}</span>
+                <span><b class="font-medium">Способ доставки:</b> {{ basketStore.onDelivery.delivery.title }}</span>
+                <span><b class="font-medium">Срок доставки заказа:</b> {{ basketStore.onDelivery.delivery.deadlines }}</span>
                 <hr />
-                <span><b>Контакты получателя</b></span>
-                <span><b>Имя:</b> {{ basketStore.onDelivery.name }}</span>
-                <span><b>Моб. телефон:</b> {{ basketStore.onDelivery.number }}</span>
-                <span><b>Адрес:</b> {{ basketStore.onDelivery.sity }}, {{ basketStore.onDelivery.street }}, {{ basketStore.onDelivery.home }}</span>
+                <span><b class="font-medium">Контакты получателя</b></span>
+                <span><b class="font-medium">Имя:</b> {{ basketStore.onDelivery.name }}</span>
+                <span><b class="font-medium">Моб. телефон:</b> {{ basketStore.onDelivery.number }}</span>
+                <span><b class="font-medium">Адрес:</b> {{ basketStore.onDelivery.sity }}, {{ basketStore.onDelivery.street }}, {{ basketStore.onDelivery.home }}</span>
 
                 <a 
                     class="flex justify-center items-center bg-red-500 rounded-xl text-white font-semibold text-sm mt-2 px-5 py-2 noted"
@@ -127,7 +273,7 @@ const selected_delivery = ref(false)
                 </a>
             </div>
 
-            <div>
+            <div class="flex flex-col gap-y-4">
                 <div class="flex justify-between items-center">
                     <div class="font-semibold text-lg">Способ оплаты</div>
                     <a href="#"
@@ -136,11 +282,28 @@ const selected_delivery = ref(false)
                         }"
                     >
                         <img 
-                            class="-rotate-90 cursor-pointer w-4"
+                            class=" cursor-pointer w-4"
                             src="@/assets/icons/Arrow.svg"
                             alt="Arrow-Icon-Next"
                         />
                     </a>
+                </div>
+
+                <div class="flex flex-col gap-y-3">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-x-3">
+                            <div class="flex justify-center items-center bg-theme_silver_100 w-14 h-14 rounded-lg">
+                                <img 
+                                    src="../assets/icons/card.svg"
+                                    alt="Icon Card"
+                                />
+                            </div>
+                            <div>
+                                <h4>Банковская карта</h4>
+                                <span class="text-sm font-semibold text-green-500">МИР</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -153,7 +316,12 @@ const selected_delivery = ref(false)
 
                 <div class="flex justify-between">
                     <p class="text-theme_silver_500">Способ доставки</p>
-                    <b class="font-semibold">{{ delivery_detailed.delivery.price }} ₽</b>
+                    <b 
+                    v-if="!basketStore.onDelivery"
+                    class="font-semibold">0 ₽</b>
+                    <b 
+                    v-else
+                    class="font-semibold">{{ basketStore.onDelivery.delivery.price }} ₽</b>
                 </div>
 
                 <div class="flex justify-between">

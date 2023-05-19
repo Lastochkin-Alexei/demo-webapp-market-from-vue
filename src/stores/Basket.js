@@ -35,6 +35,11 @@ export const useBasketStore = defineStore('basketStore', () => {
         }
     }
 
+    const setPaid = (uid) => {
+        const idx = mySuccessBuy.value.findIndex((el) => el.uid_pay === uid)
+        mySuccessBuy.value[idx].paid = true
+    }
+
     watch(() => orders, (state) => {
         localStorage.setItem("orders", JSON.stringify(state))
     }, {deep: true})
@@ -55,6 +60,7 @@ export const useBasketStore = defineStore('basketStore', () => {
         deleteOrder,
         setCount,
         mySuccessBuy,
-        addBuy
+        addBuy,
+        setPaid
     }
 })

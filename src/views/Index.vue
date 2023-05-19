@@ -1,12 +1,24 @@
 <script setup>
 
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useOrdersStore } from '@/stores/Orders'
-import { MainButton } from "vue-tg"
+import { useBasketStore } from '@/stores/Basket'
+import { MainButton, useWebAppMainButton } from "vue-tg"
 
 const router = useRouter()
 const ordersStore = useOrdersStore()
+const basketStore = useBasketStore()
+
+const { hideMainButton, showMainButton } = useWebAppMainButton()
+
+onMounted(() => {
+    if (basketStore.orders.length < 1) {
+        hideMainButton()
+    } else {
+        showMainButton()
+    }
+})
 
 const query = ref('')
 const queryTags = ref([])
@@ -45,6 +57,7 @@ const inTags = (tag) => {
     <main id="container" class="p-5 max-sm:w-full w-[640px] mx-auto">
 
         <MainButton
+            v-if="basketStore.orders.length > 0"
             text="Корзина"
             @click="goBasket()" 
             color="#B66CF5"

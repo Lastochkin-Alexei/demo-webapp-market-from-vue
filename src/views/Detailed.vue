@@ -1,19 +1,31 @@
 <script setup>
 
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useOrdersStore } from '@/stores/Orders'
-import { MainButton, BackButton, useWebAppPopup } from "vue-tg"
+import { useBasketStore } from '@/stores/Basket'
+import { MainButton, BackButton, useWebAppPopup, useWebAppMainButton } from "vue-tg"
+
+const { hideMainButton, showMainButton } = useWebAppMainButton()
 
 const router = useRouter()
 const route = useRoute()
 
 const ordersStore = useOrdersStore()
+const basketStore = useBasketStore()
+
+onMounted(() => {
+    if (basketStore.orders.length < 1) {
+        hideMainButton()
+    } else {
+        showMainButton()
+    }
+})
 
 const { showAlert } = useWebAppPopup()
 const id = route.params.id
 
-const goBack = () => router.push({name: 'Index'})
+const goBack = () => window.history.length > 1 ? router.go(-1) : router.push({name: 'Index'})
 const goBasket = () => router.push({name: 'Basket'})
 
 const sertificate_opened = ref(null)
@@ -28,7 +40,7 @@ const setPack = (sku) => {
 
 const pushAlert = () => {
     if (window.Telegram.WebApp.ready() != undefined) {
-        showAlert('Товар добавлен в корзину')
+        showAlert('Товар добавлен в корзину', showMainButton)
     } else {
         alert('Товар добавлен в корзину')
     }
@@ -41,7 +53,8 @@ const pushAlert = () => {
 
         <BackButton @click="goBack()"/>
 
-        <MainButton 
+        <MainButton
+            v-if="basketStore.orders.length > 0"
             text="Корзина"
             @click="goBasket()" 
             color="#B66CF5"
@@ -95,7 +108,9 @@ const pushAlert = () => {
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-y-2">
+                <div
+                v-if="product.price > 0"
+                class="flex flex-col gap-y-2">
                     <div class="font-semibold text-lg">Упаковка</div>
                     <div class="flex flex-row gap-3 overflow-x-auto">
                         <span 
